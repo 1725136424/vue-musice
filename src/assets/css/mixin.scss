@@ -1,0 +1,13 @@
+@import "./variable";
+
+@mixin set_rootSize($font_size) {
+  [data-scale = '1'] & {
+    font-size: $font_size;
+  }
+  [data-scale = '2'] & {
+    font-size: $font_size * 2;
+  }
+  [data-scale = '3'] & {
+    font-size: $font_size * 3;
+  }
+}
