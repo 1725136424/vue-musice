@@ -1,14 +1,24 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueLazyload from 'vue-lazyload'
 import router from './router'
 import store from './store'
 import FastClick from 'fastclick'
 import './assets/css/reset.scss'
 import './assets/css/base.scss'
-
-Vue.config.productionTip = false
-
+import { formatDate } from './tools/tools'
+// import Vconsole from 'vconsole'
+// Vue.config.productionTip = false
+// const vConsole = new Vconsole()
+// Vue.use(vConsole)
+Vue.use(VueLazyload, {
+  loading: require('./assets/images/loading.png')// 懒加载使用的图片
+})
 FastClick.attach(document.body)
+// 自定义过滤器
+Vue.filter('formatDuration', function (value) {
+  return formatDate('mm:ss', new Date(value))
+})
 new Vue({
   router,
   store,

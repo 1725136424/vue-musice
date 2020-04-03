@@ -1,15 +1,30 @@
 <template>
   <div id="app">
-    <p>第一个项目</p>
+    <div v-show="!this.getIsNormalPlay">
+      <Header></Header>
+      <Tabber></Tabber>
+      <router-view></router-view>
+    </div>
+    <Play></Play>
   </div>
 </template>
 <script>
+import Header from './components/Header'
+import Tabber from './components/Tabber'
+import Play from './views/Play'
+import { mapGetters } from 'vuex'
 export default {
-
+  components: {
+    Header,
+    Tabber,
+    Play
+  },
+  computed: {
+    ...mapGetters([
+      'getIsNormalPlay'
+    ])
+  }
 }
 </script>
 <style scoped lang="scss">
-  p {
-    font-size: 32px;
-  }
 </style>

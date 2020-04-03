@@ -1,6 +1,23 @@
 @import "./variable";
 
-@mixin set_rootSize($font_size) {
+//不换行
+@mixin no_wrap() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 限制行数
+@mixin clamp($row){
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:$row;
+}
+
+//设置根字体大小
+@mixin set_fontSize($font_size) {
   [data-scale = '1'] & {
     font-size: $font_size;
   }
@@ -11,3 +28,111 @@
     font-size: $font_size * 3;
   }
 }
+//设置背景颜色
+@mixin set_bgColor() {
+  [data-theme = 'theme1'] & {
+    background-color: $theme1_bgColor;
+  }
+  [data-theme = 'theme2'] & {
+    background-color: $theme2_bgColor;
+  }
+  [data-theme = 'theme3'] & {
+    background-color: $theme3_bgColor;
+  }
+}
+//设置图片
+@mixin set_headerImg($class) {
+  [data-theme = 'theme1'] & {
+    background: url($class + '_163.png') no-repeat center center;
+    background-size: 100%;
+  }
+  [data-theme = 'theme2'] & {
+    background: url($class + '_qq.png') no-repeat center center;
+    background-size: 100%;
+  }
+  [data-theme = 'theme3'] & {
+    background: url($class + '_it666.png') no-repeat center center;
+    background-size: 100%;
+  }
+
+  [data-theme = 'theme1'][data-scale = '2'] & {
+    background: url($class + '_163@2x.png') no-repeat center center;
+    background-size: 100%;
+  }
+  [data-theme = 'theme2'][data-scale = '2'] & {
+    background: url($class + '_qq@2x.png') no-repeat center center;
+    background-size: 100%;
+  }
+  [data-theme = 'theme3'][data-scale = '2'] & {
+    background: url($class + '_it666@2x.png') no-repeat center center;
+    background-size: 100%;
+  }
+
+  [data-theme = 'theme1'][data-scale = '3'] & {
+    background: url($class + '_163@3x.png') no-repeat center center;
+    background-size: 100%;
+  }
+  [data-theme = 'theme2'][data-scale = '3'] & {
+    background: url($class + '_qq@3x.png') no-repeat center center;
+    background-size: 100%;
+  }
+  [data-theme = 'theme3'][data-scale = '3'] & {
+    background: url($class + '_it666@3x.png') no-repeat center center;
+    background-size: 100%;
+  }
+}
+
+//次要背景颜色
+@mixin set_sub_bgColor() {
+  [data-theme = 'theme1'] & {
+    background-color: $theme1_sub_bgColor;
+  }
+  [data-theme = 'theme2'] & {
+    background-color: $theme2_sub_bgColor;
+  }
+  [data-theme = 'theme3'] & {
+    background-color: $theme3_sub_bgColor;
+  }
+}
+
+//设置边框颜色
+@mixin set_border_color() {
+  [data-theme = 'theme1'] & {
+    border-color: $theme1_border_color;
+  }
+  [data-theme = 'theme2'] & {
+    border-color: $theme2_border_color;
+  }
+  [data-theme = 'theme3'] & {
+    border-color: $theme3_border_color;
+  }
+}
+
+//设置文字颜色
+@mixin set_font_color() {
+  [data-theme = 'theme1'] & {
+    color: $theme1_font_color;
+  }
+  [data-theme = 'theme2'] & {
+    color: $theme2_font_color;
+  }
+  [data-theme = 'theme3'] & {
+    color:$theme3_font_color;
+  }
+}
+
+//设置激活颜色
+@mixin set_active_font_color() {
+  [data-theme = 'theme1'] & {
+    color: $theme1_active_font-color;
+  }
+  [data-theme = 'theme2'] & {
+    color: $theme2_active_font-color;
+  }
+  [data-theme = 'theme3'] & {
+    color:$theme3_active_font-color;
+  }
+}
+
+
+

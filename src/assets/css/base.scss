@@ -4,12 +4,12 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   touch-action: none;
+  overflow: hidden;
 }
 
 body{
-  @include set_rootSize($font_medium);
+  @include set_fontSize($font_medium);
   font-family: Helvetica,sans-serif,STHeiTi;
 }
 
