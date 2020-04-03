@@ -30,10 +30,14 @@ export default {
           this.musicDetail = res.songs
           this.title = res.album.name
           this.picUrl = res.album.blurPicUrl
-        } else {
+        } else if (type === 'playlist') {
           this.musicDetail = res.playlist.tracks
           this.title = res.playlist.name
           this.picUrl = res.playlist.coverImgUrl
+        } else if ((type === 'singer')) {
+          this.musicDetail = res.hotSongs
+          this.title = res.artist.name
+          this.picUrl = res.artist.picUrl
         }
       })
       .catch(e => console.log(e))
@@ -51,7 +55,8 @@ export default {
       picUrl: '',
       urlPath: {
         playlist: 'playlist/detail',
-        album: 'album'
+        album: 'album',
+        singer: 'artists'
       }
     }
   },

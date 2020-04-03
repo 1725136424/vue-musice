@@ -104,10 +104,10 @@ export default {
     },
     getIsNormalPlay: function (newValue, oldValue) {
       if (newValue) {
-        setTimeout(() => {
+        this.$nextTick(() => {
           this.lyricHeight = parseFloat(getComputedStyle(this.$refs['lyric-li'][0]).height)
           this.lyricUIHeight = parseFloat(getComputedStyle(this.$refs.scroll.$el).height)
-        }, 500)
+        })
       }
     }
   },

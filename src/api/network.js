@@ -25,10 +25,10 @@ export default {
   all (array) {
     return new Promise(function (resolve, reject) {
       axios.all(array)
-        .then(res => {
-          console.log(res)
-        })
-        .catch(e => console.log(e))
+        .then(axios.spread((...list) => {
+          resolve(list)
+        }))
+        .catch(e => reject(e))
     })
   }
 }

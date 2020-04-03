@@ -15,10 +15,16 @@ const routes = [
     path: '/recommend',
     component: Recommend,
     children: [
-      { path: '/recommend/detail/:id/:type', component: Detail }
+      { path: 'detail/:id/:type', component: Detail }
     ]
   },
-  { path: '/singer', component: Singer },
+  {
+    path: '/singer',
+    component: Singer,
+    children: [
+      { path: 'detail/:id/:type', component: Detail }
+    ]
+  },
   { path: '/rank', component: Rank },
   { path: '/search', component: Search },
   { path: '/personal', component: Personal }
