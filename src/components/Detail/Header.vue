@@ -1,30 +1,20 @@
 <template>
-  <div class="header" @click="toggleTheme">
-    <div class="left" @click.stop="back"></div>
-    <div class="center">
-      <p>{{ title }}</p>
-    </div>
-    <div class="right"></div>
+  <div class="header">
+    <NormalHeader>
+      <div class="left" slot="left" @click.stop="back"></div>
+      <div class="center" slot="center">
+        <p>{{ title }}</p>
+      </div>
+      <div class="right" slot="right"></div>
+    </NormalHeader>
   </div>
 </template>
 
 <script>
+import NormalHeader from './../Header'
 export default {
   name: 'Header',
-  data () {
-    return {
-      index: 0,
-      themes: ['theme1', 'theme2', 'theme3']
-    }
-  },
   methods: {
-    toggleTheme: function () {
-      this.index++
-      if (this.index >= this.themes.length) {
-        this.index = 0
-      }
-      document.documentElement.setAttribute('data-theme', this.themes[this.index])
-    },
     back () {
       this.$router.back()
     }
@@ -35,6 +25,9 @@ export default {
       default: '',
       require: true
     }
+  },
+  components: {
+    NormalHeader
   }
 }
 </script>
@@ -45,17 +38,6 @@ export default {
   .header {
     position: relative;
     z-index: 666;
-    width: 100%;
-    height: 100px;
-    @include set_bgColor();
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .left, .right {
-      width: 84px;
-      height: 84px;
-      background: black;
-    }
     .left {
       @include set_headerImg("./../../assets/images/back");
     }

@@ -1,10 +1,14 @@
 <template>
     <div class="header" @click="toggleTheme">
-      <div class="header-left"></div>
-      <div class="header-center">
-        知播渔音乐
+      <div class="left">
+        <slot name="left"></slot>
       </div>
-      <div class="header-right" @click.stop="skipPersonal"></div>
+      <div class="center">
+        <slot name="center"></slot>
+      </div>
+      <div class="right">
+        <slot name="right"></slot>
+      </div>
     </div>
 </template>
 
@@ -24,9 +28,6 @@ export default {
         this.index = 0
       }
       document.documentElement.setAttribute('data-theme', this.themes[this.index])
-    },
-    skipPersonal () {
-      this.$router.push('/personal')
     }
   }
 }
@@ -42,25 +43,13 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .header-left, .header-right {
+    .left, .right {
       width: 84px;
       height: 84px;
-    }
-    .header-left {
-      @include set_headerImg('./../assets/images/logo')
-    }
-    .header-right {
-      @include set_headerImg('./../assets/images/account')
-    }
-    .header-center {
-      flex: 1;
-      margin: 0 30px;
-      height: 100%;
-      text-align: center;
-      line-height: 100px;
-      @include set_fontSize($font_medium_s);
-      color: #ffffff;
-      font-weight: bold;
+      *{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 </style>

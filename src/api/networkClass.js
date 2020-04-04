@@ -56,7 +56,6 @@ export const getAllArtist = () => {
     }
     network.all(letterArray)
       .then(res => {
-        console.log(res)
         let obj = {}
         obj.key = letter
         obj.value = res

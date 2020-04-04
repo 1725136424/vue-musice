@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <div v-show="!this.getIsNormalPlay">
-      <Header></Header>
+      <MainHeader></MainHeader>
       <Tabber></Tabber>
-      <router-view></router-view>
+      <keep-alive include="Singer,Search">
+        <router-view></router-view>
+      </keep-alive>
     </div>
     <Play></Play>
   </div>
 </template>
 <script>
-import Header from './components/Header'
+import MainHeader from './components/MainHeader'
 import Tabber from './components/Tabber'
 import Play from './views/Play'
 import { mapGetters } from 'vuex'
 export default {
   components: {
-    Header,
+    MainHeader,
     Tabber,
     Play
   },

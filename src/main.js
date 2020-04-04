@@ -7,10 +7,12 @@ import FastClick from 'fastclick'
 import './assets/css/reset.scss'
 import './assets/css/base.scss'
 import { formatDate } from './tools/tools'
+import Loading from './plugin/loading/loading'
 // import Vconsole from 'vconsole'
 // Vue.config.productionTip = false
 // const vConsole = new Vconsole()
 // Vue.use(vConsole)
+Vue.use(Loading)
 Vue.use(VueLazyload, {
   loading: require('./assets/images/loading.png')// 懒加载使用的图片
 })

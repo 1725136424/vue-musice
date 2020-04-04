@@ -121,7 +121,6 @@ export default {
           try {
             lyric = res.lrc.lyric
           } catch (e) {
-            console.log(e)
           }
           if (lyric) {
             this.lyric = formatLyric(lyric)

@@ -1,5 +1,5 @@
 <template>
-  <div class="loading">
+  <div class="loading" v-show="isShow">
     <div class="circle"></div>
     <p>{{ tip }}</p>
   </div>
@@ -10,7 +10,8 @@ export default {
   name: 'Loading',
   data () {
     return {
-      tip: '正在加载中....'
+      tip: '正在加载中....',
+      isShow: false
     }
   }
 }
@@ -20,6 +21,7 @@ export default {
   @import "./../../assets/css/mixin";
   @import "./../../assets/css/variable";
   .loading {
+    z-index: 100000;
     position: fixed;
     width: 200px;
     height: 200px;
@@ -30,7 +32,7 @@ export default {
     top: 50%;
     text-align: center;
     .circle {
-      margin-top: 40px;
+      margin-top: 45px;
       display: inline-block;
       width: 80px;
       height: 80px;
@@ -42,7 +44,10 @@ export default {
     p {
       text-align: center;
       color: #ffffff;
-      @include set_fontSize($font_medium)
+      @include set_fontSize($font_medium);
+      padding-bottom: 10px;
+      position: relative;
+      top: -10px;
     }
   }
   @keyframes rotate {

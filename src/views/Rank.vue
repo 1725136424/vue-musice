@@ -9,7 +9,7 @@
             <li v-for="item in rank[key]" :key="item.id" @click.stop="skip(item.id)">
               <div v-if="value === '官方榜'">
                 <div class="left">
-                  <img :src="item.ranks.coverImgUrl" alt="">
+                  <img v-lazy="item.ranks.coverImgUrl" alt="">
                   <span>{{item.ranks.updateFrequency}}</span>
                 </div>
                 <div class="right">
@@ -20,7 +20,7 @@
               </div>
               <div v-else>
                 <div class="top">
-                  <img :src="item.ranks.coverImgUrl" alt="">
+                  <img v-lazy="item.ranks.coverImgUrl" alt="">
                   <span>{{item.ranks.updateFrequency}}</span>
                 </div>
                 <div class="bottom">
