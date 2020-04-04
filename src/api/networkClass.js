@@ -132,36 +132,6 @@ export const getAllRank = () => {
   })
 }
 
-/* export const getSingleRank = (id) => network.get('/top/list', { idx: id })
+export const getSearchSuggest = (keywords) => network.get('search?type=1', { keywords: keywords })
 
-export const getGroupRank = (singleRank) => {
-  return new Promise((resolve, reject) => {
-    let networkArray = []
-    singleRank.forEach(value => {
-      networkArray.push(getSingleRank(value.id))
-    })
-    network.all(networkArray)
-      .then(res => {
-        let array = []
-        res.forEach(value => {
-          array.push(value.playlist)
-        })
-        resolve(array)
-      })
-      .catch(e => console.log(e))
-  })
-}
-
-export const getAllRank = () => {
-  return new Promise(function (resolve, reject) {
-    let networkArray = []
-    for (let key in rank) {
-      networkArray.push(getGroupRank(rank[key]))
-    }
-    network.all(networkArray)
-      .then(res => {
-        console.log(res)
-      })
-      .catch(e => console.log(e))
-  })
-} */
+export const getHotSearch = () => network.get('/search/hot')
