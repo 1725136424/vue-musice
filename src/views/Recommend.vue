@@ -86,26 +86,4 @@ export default {
     right: 0;
     bottom: 0;
   }
-  .v-enter{
-    transform: translateX(100%);
-    opacity: 0.5;
-  }
-  .v-enter-to{
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  .v-enter-active{
-    transition: all 1s;
-  }
-  .v-leave {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  .v-leave-to {
-    transform: translateX(100%);
-    opacity: 0.5;
-  }
-  .v-leave-active {
-    transition: all 1s;
-  }
 </style>
