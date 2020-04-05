@@ -11,5 +11,23 @@ module.exports = {
         }]
       }]
     }
+  },
+
+  pluginOptions: {
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/',
+        '/personal',
+        '/singer',
+        '/recommend',
+        '/detail',
+        '/search',
+        '/rank'
+      ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true
+    }
   }
 }

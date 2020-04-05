@@ -18,7 +18,9 @@ import Header from './../components/Detail/Header'
 import Center from './../components/Detail/Center'
 import Bottom from './../components/Detail/Bottom'
 import ScrollView from './../components/Scroll/ScrollView'
+import MetaInfo from './../../vue-meta-info'
 export default {
+  metaInfo: MetaInfo.detail,
   name: 'Detail',
   created () {
     const id = this.$route.params.id

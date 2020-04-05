@@ -44,7 +44,9 @@
 import { getSearchSuggest, getHotSearch } from '../api/networkClass'
 import ScrollView from './../components/Scroll/ScrollView'
 import { mapGetters, mapActions } from 'vuex'
+import MetaInfo from './../../vue-meta-info'
 export default {
+  metaInfo: MetaInfo.search,
   name: 'Search',
   data () {
     return {

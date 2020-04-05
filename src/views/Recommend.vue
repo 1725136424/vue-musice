@@ -16,8 +16,9 @@ import { getBanner, getPlaylist, getAlbum, getNewSong } from '../api/networkClas
 import Playlist from './../components/Recommend/Playlist'
 import NewSong from './../components/Recommend/NewSong'
 import ScrollView from './../components/Scroll/ScrollView'
-
+import MetaInfo from './../../vue-meta-info'
 export default {
+  metaInfo: MetaInfo.recommend,
   name: 'Recommend',
   created: function () {
     getBanner()

@@ -39,7 +39,9 @@
 <script>
 import { getAllRank } from '../api/networkClass'
 import ScrollView from './../components/Scroll/ScrollView'
+import MetaInfo from './../../vue-meta-info'
 export default {
+  metaInfo: MetaInfo.rank,
   name: 'Rank',
   data () {
     return {

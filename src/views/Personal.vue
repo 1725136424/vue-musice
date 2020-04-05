@@ -16,7 +16,9 @@ import Center from './../components/Peronsal/Center'
 import { mapGetters } from 'vuex'
 import Velocity from 'velocity-animate'
 import 'velocity-animate/velocity.ui'
+import MetaInfo from './../../vue-meta-info'
 export default {
+  metaInfo: MetaInfo.personal,
   name: 'Personal',
   data () {
     return {

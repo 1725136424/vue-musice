@@ -31,8 +31,9 @@
 <script>
 import ScrollView from './../components/Scroll/ScrollView'
 import { getAllArtist } from '../api/networkClass'
-
+import MetaInfo from './../../vue-meta-info'
 export default {
+  metaInfo: MetaInfo.singer,
   name: 'Singer',
   data () {
     return {
